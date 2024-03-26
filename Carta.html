@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Amor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50;
+            background-image: url('Eu\ e\ ela\ 2.jpg');
+            /* Imagem de fundo da página */
+            background-size: 100%;
+            background-position: center;
+        }
+
+        .carta-container {
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Cor de fundo da carta */
+            border: 5px solid #ff4d88;
+            /* Borda da carta */
+            border-radius: 20px;
+            /* Borda arredondada */
+            padding: 30px;
+            /* Espaçamento interno da carta */
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+            /* Sombra da carta */
+            display: none;
+            /* Inicia fechada */
+            position: relative;
+            /* Adicionado para posicionamento da imagem */
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1,
+        h2 {
+            margin-bottom: 10px;
+            color: #ff4d88;
+            /* Cor do título da carta */
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #4d4d4d;
+            /* Cor do texto da carta */
+            font-size: 18px;
+        }
+
+        .botao-abrir {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .botao-abrir button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #ff4d88;
+            /* Cor de fundo do botão */
+            border: none;
+            border-radius: 30px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .botao-abrir button:hover {
+            background-color: #ff007f;
+            /* Cor de fundo do botão ao passar o mouse */
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            position: relative;
+            /* Adicionado para posicionamento da imagem */
+        }
+
+        .botoes-resposta button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            background-color: #8400ff;
+            /* Cor de fundo do botão */
+            border: none;
+            border-radius: 5px;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            transition: background-color 0.3s;
+            position: relative;
+        }
+
+        .disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        /* Estilos para a imagem ao final da carta */
+        .imagem-final {
+            position: absolute;
+            bottom: 35px;
+            right: 20px;
+            width: 150px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carta-container" id="carta">
+        <header>
+            <h1>MINHA PRINCESA LINDA PERFEITA,</h1>
+        </header>
+        <strong>
+        <p>Meu amor,
+        
+        Em cada batida do meu coração, ecoa o suave eco da tua presença. Cada momento que compartilhamos é uma obra-prima,
+        pintada com as cores mais vivas da felicidade e do carinho. Desde o momento em que nossos caminhos se cruzaram, minha
+        vida ganhou um novo brilho, uma nova razão para sorrir a cada amanhecer.</p>
+        <p>Você é a melodia que embala meus sonhos, a luz que ilumina meus dias mais escuros. Seus olhos refletem a beleza do
+        universo, e neles encontro o meu porto seguro. Cada palavra sua é como um poema recitado ao vento, tocando a mais
+        profunda essência da minha alma.
+        
+        Nosso amor é como uma jornada sem fim, onde descobrimos novos horizontes juntos, superamos desafios e celebramos cada
+        vitória. Na sua presença, sinto-me completo, como se o mundo inteiro se encaixasse perfeitamente ao redor de nós.</p>
+        <p>Prometo cuidar de você, nutrir nosso amor com compreensão e ternura. Que cada amanhecer seja uma nova página em nossa
+        história, escrita com o mais puro sentimento de amor e dedicação.
+        
+        Você é meu anjo, minha inspiração, meu amor eterno. Que nossa jornada seja repleta de felicidade, amor e cumplicidade,
+        hoje e para sempre.</p>
+        <p>DO SEU LINDO E PERFEITO NAMORADO HIHI</p>
+        <p>EU TE AMO PRA SEMPRE, EU TE ALMO PRA SEMPRE</p>
+        </strong>    
+        <!-- Imagem ao final da carta -->
+        <img src="Eu e ela 1.jpg" alt="Sua Imagem" class="imagem-final">
+    </div>
+
+    <div class="botao-abrir">
+        <button onclick="mostrarCarta()">Abrir Carta</button>
+    </div>
+
+    <footer>
+        <h2 style= "color: rgb(68, 0, 255); text-align: center";>VIVE PRA SEMPRE COMIGO?</h2>
+        <div class="botoes-resposta">
+            <button onmouseover="moverBotaoNao()">Não</button>
+            <button onclick="responderSim()">Sim</button>
+        </div>
+    </footer>
+
+    <script>
+        function mostrarCarta() {
+            var carta = document.getElementById("carta");
+            carta.style.display = "block";
+        }
+
+        function moverBotaoNao() {
+            var botaoNao = document.querySelector('.botoes-resposta button:nth-child(1)');
+            var posX = Math.random() * 200 - 100; // Mover entre -100px e 200px
+            var posY = Math.random() * 200 - 100; // Mover entre -100px e 200px
+            botaoNao.style.left = posX + 'px';
+            botaoNao.style.top = posY + 'px';
+        }
+
+        function responderSim() {
+            window.location.href = "Sim.html";
+        }
+    </script>
+</body>
+
+</html>

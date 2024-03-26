@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sim</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background-image: url('Eu\ e\ ela\ 1.jpg');
+            /* Imagem de fundo da página */
+
+        }
+
+        .coracao {
+            font-size: 10em;
+            color: #ff4d88;
+            animation: heartBeat 1s infinite alternate;
+        }
+
+        @keyframes heartBeat {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.2);
+            }
+        }
+
+        .mensagem {
+            font-size: 4em;
+            font-style: italic;
+            color: #00009C;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* Estilos para os confetes */
+        .confete {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            border-radius: 50%;
+            animation: confeteAnimation 2s linear infinite;
+        }
+
+        /* Animação dos confetes */
+        @keyframes confeteAnimation {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 500;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 500;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="coracao">❤️</div>
+    <div class="mensagem">EU TE AMO PRA SEMPRE PRINCESA</div>
+    <script>
+        // Função para criar confetes
+        function criarConfetes() {
+            // Número de confetes
+            var numConfetes = 500;
+
+            // Cores disponíveis para os confetes
+            var cores = ['#ff4d88', '#4d88ff', '#88ff4d', '#ffff4d', '#ff884d'];
+
+            // Loop para criar cada confete
+            for (var i = 0; i < numConfetes; i++) {
+                // Cria um novo elemento div para o confete
+                var confete = document.createElement('div');
+                confete.className = 'confete';
+
+                // Escolhe uma cor aleatória para o confete
+                var cor = cores[Math.floor(Math.random() * cores.length)];
+                confete.style.backgroundColor = cor;
+
+                // Define uma posição aleatória para o confete
+                var posX = Math.random() * window.innerWidth;
+                var posY = Math.random() * window.innerHeight;
+                confete.style.left = posX + 'px';
+                confete.style.top = posY + 'px';
+
+                // Adiciona o confete à página
+                document.body.appendChild(confete);
+            }
+        }
+
+        // Chama a função para criar os confetes quando a página é carregada
+        window.onload = criarConfetes;
+    </script>
+</body>
+
+</html>
